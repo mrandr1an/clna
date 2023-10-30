@@ -34,10 +34,7 @@ typedef struct Matrix_ixj
 Matrix_ixj initMatrix_ixj(unsigned int rows, unsigned int collumns);
 
 /* ixj Matrix Operations */
-//Sets the whole row of i equal to the elements of the array arr
-/* void fillMatrix_row_all_ixj(unsigned int row, float* arr, Matrix_ixj* mat); */
-//Sets the whole col of i equal to the elements of the array arr
-/* void fillMatrix_col_all_ixj(unsigned int col, float* arr, Matrix_ixj mat); */
+
 //Sets position [i][j] equal to value
 void fillMatrix_pos_ixj(unsigned int row, unsigned int col,Matrix_ixj* mat, float value);
 // Takes a 2D array of rows[columns] that points to its columns and fills accordingly

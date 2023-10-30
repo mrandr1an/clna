@@ -74,10 +74,10 @@ int main()
   #ifdef fillArrayTest 
   Matrix_ixj mat_to_fill = initMatrix_ixj(3,2);
 
-  float a[] = {1.0f, 3.0f,1.0f, 0.0f,1.0f,2.0f};
+  float a[] = {1.0f, 3.0f,1.0f, 0.0f,1.0f,2.0f,32.0f,32};
  
   fillMatrix_all_ixj(a,&mat_to_fill);
-  if(mat_to_fill.data[2][2] == mat1.data[2][2])
+  if(mat_to_fill.data[0][0] == mat1.data[0][0])
 	{
 	  passed();
 	}
