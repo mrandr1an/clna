@@ -39,7 +39,7 @@ test: *.o
 		$(CC) $(test_file) $(test_flags) -o $(call generate_test_output_name,$(test_file));)
 
 test_run: test
-	@for test_executable in $(ALL_EXECUTABLES); do \
+	@for test_executable in $(call generate_test_output_name,$(ALL_TEST)); do \
 		./$$test_executable; \
 	done
 
