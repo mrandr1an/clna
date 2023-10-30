@@ -61,9 +61,28 @@ void printMatrix_bad_ixj(Matrix_ixj mat) {
 }
 #endif //LNA_DEBUG
 
-void fillMatrix_row_all_ixj(unsigned int row,float* arr,Matrix_ixj* mat)
+void fillMatrix_all_ixj(float* arr,Matrix_ixj* mat)
 {
-
+  int length_arr = sizeof(&arr) / sizeof(arr[0]);
+  //New row every (int) next_row
+  int next_row = length_arr / mat->rows;
+  #ifdef LNA_FUNCTION_ERRORS
+  if(next_row > mat->cols)
+	{
+	  lna_perr("Array does not fit in matrices row | note remember to start from 0\n");
+	}
+  else if(next_row < mat->cols )
+	{
+	  lna_perr("Array is too small for this array | note remember to start from 0 (also size matters)\n");
+	}
+  #endif //LNA_FUNCTION_ERRORS
+  for(int i=0; i < mat->cols;i++)
+	{
+	  for(int j=0; j<next_row;j++)
+		{
+		  mat->data[i][j] = arr[j];
+		}
+	}
 }
 
 void addMatrix_ixj_ixj(Matrix_ixj* mat1,Matrix_ixj mat2)

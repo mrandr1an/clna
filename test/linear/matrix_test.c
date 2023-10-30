@@ -37,7 +37,7 @@ void result() {
 }
 //Define test name
 #define matrixAdditionTest_FAIL
-
+#define fillArrayTest
 int main()
 {
  #ifdef matrixAdditionTest_FAIL
@@ -71,8 +71,25 @@ int main()
 	}
   #endif //matrixAdditionTest_Fail
 
-  result();
+  #ifdef fillArrayTest 
+  Matrix_ixj mat_to_fill = initMatrix_ixj(3,2);
 
+  float a[] = {1.0f, 3.0f,1.0f, 0.0f,1.0f,2.0f};
+ 
+  fillMatrix_all_ixj(a,&mat_to_fill);
+  if(mat_to_fill.data[2][2] == mat1.data[2][2])
+	{
+	  passed();
+	}
+  else
+	{
+	  failed();
+	}
+  printMatrix_ixj(mat1);
+  printMatrix_ixj(mat_to_fill);
+  #endif //fillArraytest
+
+  result();
   if(fail == 0)
   {
 	return 0;
