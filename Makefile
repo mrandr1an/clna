@@ -23,7 +23,7 @@ prod:
 	$(CC) $(build_flags) $(ALL_SRC)
 
 debug:
-	$(CC) $(build_flags) $(ALL_SRC) -DLNA_DEBUG -DLNA_FUNCTION_ERRORS -DLNA_FUNCTION_OPERATION
+	$(CC) $(build_flags) $(ALL_SRC) -DLNA_DEBUG -DLNA_FUNCTION_ERRORS -DLNA_FUNCTION_OPERATIONS
 
 *.o: debug
 	ar -rc libclna.a *.o

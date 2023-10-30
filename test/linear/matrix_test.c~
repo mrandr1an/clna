@@ -1,12 +1,13 @@
-//Enable debug functions
-#define LNA_DEBUG
-//Include library
-#include "../../src/linear/algebra.h"
-#define matrixAdditionTest_FAIL
 
-//Features
+/* //Enable debug functions */
+#define LNA_DEBUG
+/* //Features */
 #define LNA_FUNCTION_ERRORS
 
+//Include library
+#include "../../src/linear/algebra.h"
+
+#define matrixAdditionTest_FAIL
 
 int main() {
   #ifdef fillMatrixTest
@@ -31,7 +32,6 @@ int main() {
 
   fillMatrix_pos_ixj(0,0,&mat1,1.0);
   fillMatrix_pos_ixj(0,1,&mat1,3.0);
-
   fillMatrix_pos_ixj(1,0,&mat1,1.0);
   fillMatrix_pos_ixj(1,1,&mat1,0.0);
 

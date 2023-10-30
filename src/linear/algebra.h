@@ -53,6 +53,8 @@ void addMatrix_ixj_ixj(Matrix_ixj* mat1, Matrix_ixj mat2);
 #ifdef LNA_DEBUG
   #include "../style/debug.h"
   void printMatrix_ixj(Matrix_ixj mat);
+  //print matrix with red color
+  void printMatrix_bad_ixj(Matrix_ixj mat);
 #endif //LNA_DEBUG
 
 #endif //ALGEBRA_H
